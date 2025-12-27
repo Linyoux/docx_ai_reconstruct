@@ -1,0 +1,45 @@
+[
+  {
+    "id": "image1.png",
+    
+    // 🟢 基建层 (Infrastructure Layer)
+    // 这部分数据由 Python 脚本在重构时通过 PIL 读取本地文件获得
+    // 特点：绝对精准，用于控制排版容器大小，防止 CLS (累积布局偏移)
+    "base_info": {
+      "local_path": "./pipeline_output/report/media_source/image1.png",
+      "width_px": 1920,
+      "height_px": 1080,
+      "aspect_ratio": 1.77,
+      "format": "PNG",
+      "size_bytes": 204800,
+      "blurhash": "LEHV6nWB2yk8pyo0adR*.7kCMdnj" // 可选：用于前端预加载占位
+    },
+
+    // 🔵 认知层 (Cognitive Layer)
+    // 这部分数据由 GPT-4o/Claude 阅读 PDF 后生成
+    // 特点：富含语义，用于 SEO、无障碍和内容理解
+    "ai_analysis": {
+      "caption": "图1：2024年Q3季度分布式系统架构概览，展示了负载均衡层与数据持久层的交互。",
+      "alt_text": "一张蓝色的系统架构图，显示流量从网关进入，分发至三个微服务集群。",
+      "keywords": ["架构图", "微服务", "Q3财报", "高并发"],
+      "layout_suggestion": "full_width", // AI 建议：因为是复杂大图，建议全宽通栏排版
+      "visual_type": "chart" // AI 判断：这是图表，不是装饰性图片
+    }
+  },
+  {
+    "id": "image2.jpg",
+    "base_info": {
+      "local_path": "./pipeline_output/report/media_source/image2.jpg",
+      "width_px": 300,
+      "height_px": 400,
+      "aspect_ratio": 0.75,
+      "format": "JPEG"
+    },
+    "ai_analysis": {
+      "caption": "CEO 在年度大会上致辞。",
+      "alt_text": "一位穿着西装的男士手持麦克风站在舞台中央。",
+      "layout_suggestion": "sidebar_wrap", // AI 建议：因为是竖图，建议文字环绕
+      "visual_type": "photo"
+    }
+  }
+]
